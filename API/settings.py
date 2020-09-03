@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'authenticate.apps.AuthenticateConfig',
-    'fijiApi.apps.FijiapiConfig'
+    'fijiApi.apps.FijiapiConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
