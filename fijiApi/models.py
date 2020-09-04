@@ -16,7 +16,7 @@ class Provinces(models.Model):
         return self.province_name
 
 class Districts(models.Model):
-    province = models.ForeignKey(Provinces,null=True, on_delete=models.CASCADE)
+    province = models.ForeignKey(Provinces, null=True, on_delete=models.CASCADE)
     province_code = models.CharField(max_length=25)
     district_name = models.CharField(max_length= 25)
 
@@ -24,7 +24,7 @@ class Districts(models.Model):
         return self.district_name
 
 class Villages(models.Model):
-    district = models.ForeignKey(Districts,null=True, on_delete=models.CASCADE)
+    district = models.ForeignKey(Districts, null=True, on_delete=models.CASCADE)
     district_code = models.CharField(max_length=25)
     village_name = models.CharField(max_length=25)
     acknowledgement = models.TextField(default='')
