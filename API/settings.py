@@ -25,7 +25,7 @@ SECRET_KEY = '6h9(+q%rupfur1x2qyukfe+o00p3x2gt!h&)9=5*mwz)$z^n4g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-100-25-143-66.compute-1.amazonaws.com']
+ALLOWED_HOSTS = ['127.0.0.1','ec2-100-25-143-66.compute-1.amazonaws.com']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'authenticate.apps.AuthenticateConfig',
     'fijiApi.apps.FijiapiConfig',
     'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
