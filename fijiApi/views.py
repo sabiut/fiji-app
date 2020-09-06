@@ -12,7 +12,7 @@ class ConfederancyViewSet(viewsets.ModelViewSet):
     serializer_class = ConfederacySerializer
     queryset = Confederacy.objects.all()
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (AllowAny)
+    permission_classes = (IsAuthenticated,)
 
 
 class ProvincesViewSet(viewsets.ModelViewSet):
