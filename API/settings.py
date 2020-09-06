@@ -25,7 +25,7 @@ SECRET_KEY = '6h9(+q%rupfur1x2qyukfe+o00p3x2gt!h&)9=5*mwz)$z^n4g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','compxproject.de','18.234.6.29','ec2-18-234-6-29.compute-1.amazonaws.com']
+ALLOWED_HOSTS = ['127.0.0.1','comproject.net','18.234.6.29','ec2-18-234-6-29.compute-1.amazonaws.com']
 
 
 # Application definition
