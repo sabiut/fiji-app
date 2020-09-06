@@ -58,9 +58,9 @@ MIDDLEWARE = [
 CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'API.urls'
 
-CORS_ALLOWED_ORIGINS = [
-   "http://ec2-100-25-143-66.compute-1.amazonaws.com/",
-]
+# CORS_ALLOWED_ORIGINS = [
+#    "http://ec2-100-25-143-66.compute-1.amazonaws.com/",
+# ]
 
 TEMPLATES = [
     {
