@@ -33,6 +33,6 @@ class VillageViewSet(viewsets.ModelViewSet):
     serializer_class = VillagesSerializer
     queryset = Villages.objects.all()
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
 
 
