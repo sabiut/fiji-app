@@ -12,27 +12,27 @@ class ConfederancyViewSet(viewsets.ModelViewSet):
     serializer_class = ConfederacySerializer
     queryset = Confederacy.objects.all()
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
 
 
 class ProvincesViewSet(viewsets.ModelViewSet):
     serializer_class = ProvincesSerializer
     queryset = Provinces.objects.all()
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
 
 
 class DistrictsViewSet(viewsets.ModelViewSet):
     serializer_class = DistrictsSerializer
     queryset = Districts.objects.all()
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
 
 
 class VillageViewSet(viewsets.ModelViewSet):
     serializer_class = VillagesSerializer
     queryset = Villages.objects.all()
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
 
 

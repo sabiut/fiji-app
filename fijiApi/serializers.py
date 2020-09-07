@@ -7,8 +7,8 @@ class ConfederacySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Confederacy
-        fields = ('confederancy_name',
-                  'province',)
+        fields = ('id','confederancy_name',
+                  'province','district','village')
 
 
 class ProvincesSerializer(serializers.ModelSerializer):
@@ -17,6 +17,7 @@ class ProvincesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Provinces
         fields = (
+            'id',
             'confederancy',
             'confederancy_code',
             'province_name',
@@ -30,6 +31,8 @@ class DistrictsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Districts
         fields = (
+            'id',
+            'confederancy',
             'province',
             'province_code',
             'district_name',
@@ -42,6 +45,8 @@ class VillagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Villages
         fields = (
+            'id',
+            'confederancy',
             'district',
             'district_code',
             'village_name',

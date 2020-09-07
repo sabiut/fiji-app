@@ -18,6 +18,7 @@ class Provinces(models.Model):
 
 
 class Districts(models.Model):
+    confederancy = models.ForeignKey(Confederacy, related_name='district',null=True, default='', on_delete=models.CASCADE)
     province = models.ForeignKey(Provinces,related_name='district', null=True, on_delete=models.CASCADE)
     province_code = models.CharField(max_length=25)
     district_name = models.CharField(max_length=25)
@@ -26,6 +27,7 @@ class Districts(models.Model):
         return self.district_name
 
 class Villages(models.Model):
+    confederancy = models.ForeignKey(Confederacy, related_name ='village',null=True, default='', on_delete=models.CASCADE)
     district = models.ForeignKey(Districts, related_name='village', null=True, on_delete=models.CASCADE)
     district_code = models.CharField(max_length=25)
     village_name = models.CharField(max_length=25)
