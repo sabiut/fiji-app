@@ -1,16 +1,18 @@
 from rest_framework import serializers
 from .models import *
 
-
 class ConfederacySerializer(serializers.ModelSerializer):
     province = serializers.StringRelatedField(many=True)
     district = serializers.StringRelatedField(many=True)
     village = serializers.StringRelatedField(many=True)
 
+
     class Meta:
         model = Confederacy
         fields = ('id','confederancy_name',
                   'province','district','village')
+
+
 
 
 class ProvincesSerializer(serializers.ModelSerializer):
