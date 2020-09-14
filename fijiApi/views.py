@@ -24,7 +24,7 @@ class ProvincesViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filter_fields = ['province_name']
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (AllowAny,)
+    permission_classes = (IsAuthenticated,)
 
 
 class DistrictsViewSet(viewsets.ModelViewSet):
