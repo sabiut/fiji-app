@@ -8,6 +8,7 @@ router.register('confederacy', ConfederancyViewSet)
 router.register('provinces', ProvincesViewSet)
 router.register('districts', DistrictsViewSet)
 router.register('villages', VillageViewSet)
+router.register('contact', ContactViewSet)
 
 urlpatterns = [
     #path('writdata', views.writdata, name="write_to")

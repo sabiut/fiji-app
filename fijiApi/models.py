@@ -36,3 +36,16 @@ class Villages(models.Model):
 
     def __str__(self):
         return self.village_name
+
+
+
+
+
+class contact(models.Model):
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length= 25)
+    email = models.CharField(max_length= 25)
+    message = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.first_name

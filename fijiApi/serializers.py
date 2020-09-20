@@ -56,3 +56,14 @@ class VillagesSerializer(serializers.ModelSerializer):
             'village_name',
             'acknowledgement',
         )
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =contact
+        fields = (
+            'id',
+            'first_name',
+            'last_name',
+            'email',
+            'message'
+        )

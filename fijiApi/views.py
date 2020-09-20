@@ -45,3 +45,12 @@ class VillageViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
 
 
+class ContactViewSet(viewsets.ModelViewSet):
+    serializer_class = ContactSerializer
+    queryset = contact.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filter_fields = ['first_name']
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+
+
