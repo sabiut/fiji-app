@@ -38,9 +38,6 @@ class Villages(models.Model):
         return self.village_name
 
 
-
-
-
 class contact(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length= 25)

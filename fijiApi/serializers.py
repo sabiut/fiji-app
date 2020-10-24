@@ -67,3 +67,4 @@ class ContactSerializer(serializers.ModelSerializer):
             'email',
             'message'
         )
+

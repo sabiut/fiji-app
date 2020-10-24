@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authenticate.apps.AuthenticateConfig',
     'fijiApi.apps.FijiapiConfig',
+    'dashboard.apps.DashboardConfig',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',

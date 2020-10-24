@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authenticate.urls')),
     path('', include('fijiApi.urls')),
+    path('', include('dashboard.urls')),
     path('auth/', obtain_auth_token)
 ]
 

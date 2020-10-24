@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% extends "dashboard.html"%}
+{%block content%}
+<div>
+                    <!-- Table -->
+                         <table class="table table-striped">
+                            <thead>
+                                 <tr>
+                                     <th scope="col">Confederacy</th>
+                                     <th scope="col">Province</th>
+                                     <th scope="col">Edit</th>
+                                      <th scope="col">Delete</th>
+
+
+                                 </tr>
+                             </thead>
+                            <tbody>
+                                        {% for data in province%}
+                                              <tr>
+                                                   <td>{{data.confederancy.confederancy_name}}</td>
+                                                    <td>{{data.province_name}}</td>
+                                                   <td><i class="fas fa-edit"></i></td>
+                                                    <td><i class="fas fa-trash-alt"></i></td>
+
+
+                                              </tr>
+                                        {% endfor%}
+                            </tbody>
+                            </table>
+                            </div>
+
+                            <!--end table -->
+
+
+{% endblock%}
+
+</body>
+</html>

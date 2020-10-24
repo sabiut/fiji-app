@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <titl>Villages</titl></title>
+</head>
+<body>
+{% extends "dashboard.html"%}
+{%block content%}
+<div>
+                    <!-- Table -->
+                         <table class="table table-striped">
+                            <thead>
+                                 <tr>
+
+                                     <th scope="col">DISTRICTS</th>
+                                     <th scope="col">VILLAGES</th>
+                                      <th scope="col">ACKNOWLEDGEMENTS</th>
+                                     <th scope="col">EDIT</th>
+                                      <th scope="col">DELETE</th>
+
+
+                                 </tr>
+                             </thead>
+                            <tbody>
+                                        {% for data in village%}
+                                              <tr>
+
+                                                    <td>{{data.district.district_name}}</td>
+                                                   <td>{{data.village_name}}</td>
+                                                  <td>{{data.acknowledgement}}</td>
+                                                   <td><i class="fas fa-edit"></i></td>
+                                                    <td><i class="fas fa-trash-alt"></i></td>
+
+
+                                              </tr>
+                                        {% endfor%}
+                            </tbody>
+                            </table>
+                            </div>
+
+                            <!--end table -->
+
+
+{% endblock%}
+
+</body>
+</html>
