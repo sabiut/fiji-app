@@ -30,6 +30,7 @@ class Districts(models.Model):
 class Villages(models.Model):
     confederancy = models.ForeignKey(Confederacy, related_name ='village',null=True, default='', on_delete=models.CASCADE)
     district = models.ForeignKey(Districts, related_name='village', null=True, on_delete=models.CASCADE)
+    province = models.ForeignKey(Provinces, related_name='village', null=True, on_delete=models.CASCADE)
     district_code = models.CharField(max_length=25)
     village_name = models.CharField(max_length=25)
     acknowledgement = models.TextField(default='')

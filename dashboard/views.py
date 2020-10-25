@@ -8,11 +8,15 @@ from fijiApi.models import *
 
 class Dashboard(View):
     def get(self, request):
-        data = Confederacy.objects.all()
+        village = Villages.objects.all()
         return render(request, 'dashboard.html',locals())
 
-def getdashboard(request):
-    province = Provinces.objects.all()
+def confederacy(request):
+    confederacy = Confederacy.objects.all()
+    return render(request, 'confederacy.html', locals())
+
+def province(request):
+    provinces = Provinces.objects.all()
     return render(request, 'provinces.html', locals())
 
 def districts(request):

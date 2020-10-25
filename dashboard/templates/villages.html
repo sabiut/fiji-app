@@ -12,7 +12,8 @@
                          <table class="table table-striped">
                             <thead>
                                  <tr>
-
+                                     <th scope="col">CONFEDERACY</th>
+                                     <th scope="col">PROVINCE</th>
                                      <th scope="col">DISTRICTS</th>
                                      <th scope="col">VILLAGES</th>
                                       <th scope="col">ACKNOWLEDGEMENTS</th>
@@ -25,10 +26,12 @@
                             <tbody>
                                         {% for data in village%}
                                               <tr>
-
+                                                     <td>{{data.confederancy.confederancy_name}}</td>
+                                                   <td>{{data.province.province_name}}</td>
                                                     <td>{{data.district.district_name}}</td>
                                                    <td>{{data.village_name}}</td>
                                                   <td>{{data.acknowledgement}}</td>
+
                                                   <td ><a href=""><i class="fas fa-edit"></i></a></td>
                                                   <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
 

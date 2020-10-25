@@ -12,8 +12,8 @@
                          <table class="table table-striped">
                             <thead>
                                  <tr>
-                                     <th scope="col">PROVINCE</th>
-                                     <th scope="col">DISTRICTS</th>
+
+                                     <th scope="col">CONFEDERACY</th>
                                      <th scope="col">EDIT</th>
                                       <th scope="col">DELETE</th>
 
@@ -21,15 +21,14 @@
                                  </tr>
                              </thead>
                             <tbody>
-                                        {% for data in districts%}
+                                        {% for data in confederacy%}
                                               <tr>
-                                                    <td>{{data.province.province_name}}</td>
-                                                   <td>{{data.district_name}}</td>
+                                                    <td>{{data.confederancy_name}}</td>
                                                   <td><a href=""> <i class="fas fa-edit"></i></a></td>
                                                   <td><a href=""> <i class="fas fa-trash-alt"></i></a></td>
 
 
-                                             </tr>
+                                              </tr>
                                         {% endfor%}
                             </tbody>
                             </table>

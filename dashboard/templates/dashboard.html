@@ -97,6 +97,8 @@
                             </form>
                         </li>
 
+
+
                     </ul>
                 </div>
             </nav>
@@ -122,14 +124,14 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{%url 'dashboard'%}"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{%url 'fiji_confederacy'%}"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Confederacy</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{%url 'fiji_confederacy'%}"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{%url 'province'%}"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Provinces</span>
@@ -155,6 +157,15 @@
                                 aria-expanded="false">
                                 <i class="fas fa-cogs"></i>
                                 <span class="hide-menu">  Administrator Settings</span>
+                            </a>
+                        </li>
+
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'logout'%}"
+                                aria-expanded="false">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span class="hide-menu">  Logout</span>
                             </a>
                         </li>
 
@@ -186,43 +197,48 @@
 
                 {%block content%}
                 <div>
-                    <!-- Table -->
+                     <!-- Table -->
                          <table class="table table-striped">
                             <thead>
                                  <tr>
                                      <th scope="col">CONFEDERACY</th>
+                                     <th scope="col">PROVINCE</th>
+                                     <th scope="col">DISTRICTS</th>
+                                     <th scope="col">VILLAGES</th>
+                                      <th scope="col">ACKNOWLEDGEMENTS</th>
                                      <th scope="col">EDIT</th>
-                                     <th scope="col">DELETE</th>
+                                      <th scope="col">DELETE</th>
+
 
                                  </tr>
                              </thead>
                             <tbody>
-                                        {% for data in data%}
+                                        {% for data in village%}
                                               <tr>
-                                                    <td>{{data.confederancy_name}}</td>
-                                                  <td><a href="" ><i class="fas fa-edit"></i></a></td>
-                                                  <td><a href=""> <i class="fas fa-trash-alt"></i></a></td>
+                                                     <td>{{data.confederancy.confederancy_name}}</td>
+                                                   <td>{{data.province.province_name}}</td>
+                                                    <td>{{data.district.district_name}}</td>
+                                                   <td>{{data.village_name}}</td>
+                                                  <td>{{data.acknowledgement}}</td>
+
+                                                  <td ><a href=""><i class="fas fa-edit"></i></a></td>
+                                                  <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
 
 
                                               </tr>
                                         {% endfor%}
                             </tbody>
                             </table>
-                            </div>
-
-                            <!--end table -->
-                {%endblock%}
             </div>
-
-
+           {%endblock%}
         </div>
 
 
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center"> 2020 © Ample Admin brought to you by <a
-                    href="https://www.wrappixel.com/">wrappixel.com</a>
-            </footer>
+<!--            <footer class="footer text-center"> 2020 © Ample Admin brought to you by <a-->
+<!--                    href="https://www.wrappixel.com/">wrappixel.com</a>-->
+<!--            </footer>-->
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
