@@ -47,6 +47,7 @@ body {
         z-index: 1;
         top: 0;
         left: 0;
+
     }
 
     .login-form{
@@ -63,13 +64,18 @@ body {
     margin-top: 20%;
     padding: 60px;
     color: #fff;
+
 }
 
-.login-main-text h2{
-    font-weight: 300;
+.login-main-text h1{
+    font-weight: bold;
+
 }
 
 .btn-black{
-    background-color: #5F0B10 !important;
+    background-color:#5F0B10; !important;
     color: white;
 }
+
+
+

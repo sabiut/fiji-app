@@ -22,6 +22,18 @@
     <link rel="stylesheet" href="{% static 'dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css'%}">
     <!-- Custom CSS -->
     <link href="{% static 'dashboard/css/style.min.css'%}" rel="stylesheet">
+    <style>
+      #css-serial {
+        counter-reset: serial-number;  /* Set the serial number counter to 0 */
+
+        }
+
+        #css-serial td:first-child:before {
+            color:brown;
+            counter-increment: serial-number;  /* Increment the serial number counter */
+            content: counter(serial-number);  /* Display the counter */
+        }
+    </style>
 </head>
 
 <body>
@@ -48,18 +60,13 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="dashboard.html">
+                    <a class="navbar-brand" href="{%url 'dashboard'%}">
                         <!-- Logo icon -->
-                        <b class="logo-icon">
+                        <b id="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img src="{% static 'dashboard/plugins/images/logo-icon.png'%}" alt="homepage" />
+                            <img src="{% static 'dashboard/image/tanoa_icon.png'%}" width="100" align="center" alt="homepage" />
                         </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span class="logo-text">
-                            <!-- dark Logo text -->
-                            <img src="{% static 'dashboard/plugins/images/logo-text.png'%}" alt="homepage" />
-                        </span>
+
                     </a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -189,7 +196,7 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title text-uppercase font-medium font-14">Dashboard</h4>
+                        <h4 class="page-title text-uppercase font-medium font-14">Cavuti Dashboard</h4>
                     </div>
 
                 </div>
@@ -198,16 +205,16 @@
                 {%block content%}
                 <div>
                      <!-- Table -->
-                         <table class="table table-striped">
+                         <table class="table table-striped" id="css-serial">
                             <thead>
                                  <tr>
+                                     <th>#</th>
                                      <th scope="col">CONFEDERACY</th>
                                      <th scope="col">PROVINCE</th>
                                      <th scope="col">DISTRICTS</th>
                                      <th scope="col">VILLAGES</th>
                                       <th scope="col">ACKNOWLEDGEMENTS</th>
-                                     <th scope="col">EDIT</th>
-                                      <th scope="col">DELETE</th>
+
 
 
                                  </tr>
@@ -215,15 +222,12 @@
                             <tbody>
                                         {% for data in village%}
                                               <tr>
+                                                  <td></td>
                                                      <td>{{data.confederancy.confederancy_name}}</td>
                                                    <td>{{data.province.province_name}}</td>
                                                     <td>{{data.district.district_name}}</td>
                                                    <td>{{data.village_name}}</td>
                                                   <td>{{data.acknowledgement}}</td>
-
-                                                  <td ><a href=""><i class="fas fa-edit"></i></a></td>
-                                                  <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
-
 
                                               </tr>
                                         {% endfor%}

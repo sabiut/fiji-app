@@ -2,7 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Provinces</title>
+
+     <style>
+      #css-serial {
+        counter-reset: serial-number;  /* Set the serial number counter to 0 */
+
+        }
+
+        #css-serial td:first-child:before {
+            color:brown;
+            counter-increment: serial-number;  /* Increment the serial number counter */
+            content: counter(serial-number);  /* Display the counter */
+        }
+    </style>
 </head>
 <body>
 
@@ -10,13 +23,14 @@
 {%block content%}
 <div>
                     <!-- Table -->
-                         <table class="table table-striped">
+                         <table class="table table-striped" id="css-serial">
                             <thead>
                                  <tr>
+                                     <th>#</th>
                                      <th scope="col">CONFEDERACY</th>
                                      <th scope="col">PROVINCE</th>
                                      <th scope="col">EDIT</th>
-                                      <th scope="col">DELETE</th>
+
 
 
                                  </tr>
@@ -24,10 +38,11 @@
                             <tbody>
                                         {% for data in provinces%}
                                               <tr>
+                                                  <td></td>
                                                    <td>{{data.confederancy.confederancy_name}}</td>
                                                     <td>{{data.province_name}}</td>
                                                   <td><a href=""> <i class="fas fa-edit"></i></a></td>
-                                                  <td><a href=""> <i class="fas fa-trash-alt"></i></a></td>
+
 
 
                                               </tr>
