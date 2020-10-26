@@ -1,5 +1,6 @@
 
 from django.shortcuts import render
+from .filters import villagefilter
 
 # Create your views here.
 from django.views import View
@@ -9,6 +10,8 @@ from fijiApi.models import *
 class Dashboard(View):
     def get(self, request):
         village = Villages.objects.all()
+        myFilter = villagefilter(request.GET, queryset=village)
+        village =myFilter.qs
         return render(request, 'dashboard.html',locals())
 
 def confederacy(request):
@@ -27,3 +30,5 @@ def districts(request):
 def village(request):
     village =Villages.objects.all()
     return render(request, 'villages.html', locals())
+
+
