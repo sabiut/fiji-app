@@ -30,6 +30,7 @@
                                      <th scope="col">CONFEDERACY</th>
                                      <th scope="col">PROVINCE</th>
                                      <th scope="col">EDIT</th>
+                                     <th scope="col"> ADD</th>
 
 
 
@@ -41,7 +42,9 @@
                                                   <td></td>
                                                    <td>{{data.confederancy.confederancy_name}}</td>
                                                     <td>{{data.province_name}}</td>
-                                                  <td><a href=""> <i class="fas fa-edit"></i></a></td>
+                                                    <td ><a href="{% url 'update_province' data.id %}"><i class="fas fa-edit"></i></a></td>
+                                                   <td ><a href="{% url 'add_province' %}"><i class="far fa-plus-square"></i></a></td>
+
 
 
 

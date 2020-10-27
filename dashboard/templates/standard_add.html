@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add village</title>
+</head>
+<body>
+{% extends "dashboard.html"%}
+{%block content%}
+
+<div class="card">
+  <div class="card-header">
+    Cavuti Form
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>You can add any text for confedericy_code,province_code or district_code field. Eg: district_code or BA_code. It has been program to be map automatically. </p>
+      <footer class="blockquote-footer">Nai <cite title="Source Title">Cavuti</cite></footer>
+    </blockquote>
+  </div>
+</div>
+
+<div class="form-row">
+
+<form action="" method="post">
+  <br><br>
+
+  {% csrf_token %}
+
+  <table>
+
+  {{form.as_table}}<br>
+
+</table><br>
+<input class="btn btn-primary btn-lg" role="button" type="submit" name="submit" value="Add Record" >
+
+</form>
+</div>
+{%endblock%}
+
+
+</body>
+</html>

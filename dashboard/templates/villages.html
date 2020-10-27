@@ -20,16 +20,38 @@
 <body>
 {% extends "dashboard.html"%}
 {%block content%}
+
+<div class="container">
+    <div class="col" id="pull_right">
+                       <div class="col-4">
+
+                        </div>
+                        <div class="col-mid-4">
+
+                            </div>
+                        <div class="col">
+                            <div class="col-mid-4">
+                                   <form class="text-color">
+                            {{villageFilter.form}}
+                             <button class="btn btn-primary" type="submit" >Search</button>
+                         </form>
+                            </div>
+
+                        </div>
+                  </div>
+</div>
+<div>
 <div>
                     <!-- Table -->
                          <table class="table table-striped" id="css-serial">
                             <thead>
                                  <tr>
                                      <th>#</th>
-                                     <th scope="col">DISTRICTS</th>
+
                                      <th scope="col">VILLAGES</th>
                                       <th scope="col">ACKNOWLEDGEMENTS</th>
                                      <th scope="col">EDIT</th>
+                                     <th scope="col">ADD</th>
 
                                  </tr>
                              </thead>
@@ -37,10 +59,10 @@
                                         {% for data in village%}
                                               <tr>
                                                     <td></td>
-                                                    <td>{{data.district.district_name}}</td>
                                                    <td>{{data.village_name}}</td>
                                                   <td>{{data.acknowledgement}}</td>
-                                                  <td ><a href=""><i class="fas fa-edit"></i></a></td>
+                                                  <td ><a href="{% url 'update_village' data.id %}"><i class="fas fa-edit"></i></a></td>
+                                                   <td ><a href="{% url 'add_village' %}"><i class="far fa-plus-square"></i></a></td>
 
                                               </tr>
                                         {% endfor%}

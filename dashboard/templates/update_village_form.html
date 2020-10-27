@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update village</title>
+</head>
+<body>
+
+{% extends "dashboard.html"%}
+{%block content%}
+<div class="form-row">
+
+<form action="" method="post">
+  <br><br>
+
+  {% csrf_token %}
+
+  <table>
+
+  {{village_form.as_table}}<br>
+
+</table><br>
+<input class="btn btn-primary btn-lg" role="button" type="submit" name="submit" value="Update Record" >
+
+</form>
+</div>
+{%endblock%}
+
+</body>
+</html>

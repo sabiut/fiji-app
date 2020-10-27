@@ -19,6 +19,26 @@
 <body>
 {% extends "dashboard.html"%}
 {%block content%}
+
+<div class="container">
+    <div class="col" id="pull_right">
+                       <div class="col-4">
+
+                        </div>
+                        <div class="col-mid-4">
+
+                            </div>
+                        <div class="col">
+                            <div class="col-mid-4">
+                                   <form class="text-color">
+                            {{districtFilter.form}}
+                             <button class="btn btn-primary" type="submit" >Search</button>
+                         </form>
+                            </div>
+
+                        </div>
+                  </div>
+</div>
 <div>
                     <!-- Table -->
                          <table class="table table-striped" id="css-serial">
@@ -28,6 +48,7 @@
                                      <th scope="col">PROVINCE</th>
                                      <th scope="col">DISTRICTS</th>
                                      <th scope="col">EDIT</th>
+                                     <th scope="col">ADD</th>
 
 
 
@@ -39,7 +60,9 @@
                                                     <td></td>
                                                     <td>{{data.province.province_name}}</td>
                                                    <td>{{data.district_name}}</td>
-                                                  <td><a href=""> <i class="fas fa-edit"></i></a></td>
+                                                  <td ><a href="{% url 'update_district' data.id %}"><i class="fas fa-edit"></i></a></td>
+                                                   <td ><a href="{% url 'add_district' %}"><i class="far fa-plus-square"></i></a></td>
+
 
 
 

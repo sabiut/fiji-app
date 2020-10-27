@@ -34,8 +34,13 @@
             content: counter(serial-number);  /* Display the counter */
         }
         .text-color{
-        color:white;
+        color:gray;
+        align:center;
         }
+        #pull-right {
+  float: right !important;
+}
+
     </style>
 </head>
 
@@ -98,13 +103,7 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li >
-                         <form class="text-color">
-                            {{myFilter.form}}
-                             <button class="btn btn-primary" type="submit" >Search</button>
-                         </form>
 
-                        </li>
 
 
 
@@ -131,7 +130,9 @@
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
+
                         </li>
+
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{%url 'fiji_confederacy'%}"
                                 aria-expanded="false">
@@ -191,20 +192,53 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
+
+
+
+
+
+
+
         <div class="page-wrapper">
+
+
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
+
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
+
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+
                         <h4 class="page-title text-uppercase font-medium font-14">Cavuti Dashboard</h4>
+
+
                     </div>
 
+
                 </div>
+
+
                 <!-- /.col-lg-12 -->
 
                 {%block content%}
+                <div class="col" id="pull_right">
+                       <div class="col-4">
+
+                        </div>
+                        <div class="col-mid-8">
+                              <form class="text-color">
+                            {{myFilter.form}}
+                             <button class="btn btn-primary" type="submit" >Search</button>
+                         </form>
+                            </div>
+                        <div class="col">
+
+                        </div>
+                  </div>
+
+                <!--Table start-->
                 <div>
                      <!-- Table -->
                          <table class="table table-striped" id="css-serial">
